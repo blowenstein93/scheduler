@@ -1,0 +1,30 @@
+<h1>Welcome to Brad's app bitches!</h1>
+
+<h3>Checkout existing courses <%= link_to 'here', courses_index_path %></h3>
+
+
+<h4>Upload Course Information</h4>
+<%= form_for :course, url: courses_path do |course| %>
+
+    <%= course.label :name %>
+    <%= course.text_field :name %>
+<br>
+    <%= course.label :location %>
+    <%= course.text_field :location %>
+<br>
+    <%= course.label :difficulty %>
+    <%= course.text_field :difficulty %>
+<br>
+    <%= course.label :description %>
+    <%= course.text_area :description %>
+<br>
+    <%= course.label :time %>
+    <%= course.text_field :time %>
+<br>
+    <%= course.label :day %>
+    <%= course.text_field :day %>
+
+<br>
+    <%= course.submit %>
+
+<%end%>

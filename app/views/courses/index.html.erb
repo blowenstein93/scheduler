@@ -1,2 +1,39 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+
+<h3>Here's the course you were looking for</h3>
+<p>
+  <strong>Title:</strong>
+  <%= @course.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @course.description %>
+</p>
+
+
+
+<h3>Here's a list of the existing courses</h3>
+
+<table>
+    <tr>
+        <th> Course Name</th>
+        <th> Course Location </th>
+        <th> Difficulty</th>
+        <th> Description</th>
+        <th>Time</th>
+        <th>Days</th>
+        <th>Major</th>
+        <th>School</th>
+    </tr>
+
+    <% @courses.each do |course| %>
+        <tr>
+            <td><%= course.name %></td>
+            <td><%= course.location %></td>
+            <td><%= course.difficulty %></td>
+            <td><%= course.description %></td>
+            <td><%= course.time %></td>
+            <td><%= course.days %></td>
+            <td><%= course.major_id %></td>
+            <td><%= course.school_id.name %></td>
+</table>>

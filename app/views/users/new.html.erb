@@ -1,2 +1,19 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= form_for @user do |user| %>
+    <p>Name:</p>
+    <%= user.text_field :name %>
+
+    <p>E-Mail:</p>
+    <%= user.text_field :email %>
+
+    <p>Password:</p>
+    <%= user.password_field :password %>
+
+    <p>School:</p>
+    <%= user.collection_select :school_id, School.all, :id, :name %>
+
+    <p>Major:</p>
+    <%= user.collection_select :major_id, Major.all, :id, :name %>
+
+    <%= user.submit %>
+
+<% end %>
